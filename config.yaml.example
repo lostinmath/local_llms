@@ -1,0 +1,75 @@
+# Example configuration for Local LLMs
+# Copy this file to config.yaml and customize as needed
+
+model:
+  # Default model to load (HuggingFace identifier or local path)
+  default_model: "gpt2"
+  
+  # Directory to cache downloaded models
+  cache_dir: "./models_cache"
+  
+  # Device to use: "auto" (detect best), "cuda", "mps" (Mac), or "cpu"
+  device: "auto"
+  
+  # Memory and quantization settings
+  max_memory: null  # Optional: e.g., {0: "10GB", "cpu": "30GB"}
+  load_in_8bit: false  # Enable 8-bit quantization (requires bitsandbytes)
+  load_in_4bit: false  # Enable 4-bit quantization (requires bitsandbytes)
+
+inference:
+  # Maximum length of generated text (in tokens)
+  max_length: 512
+  
+  # Temperature for sampling (0.0 = deterministic, higher = more random)
+  temperature: 0.7
+  
+  # Top-p (nucleus) sampling probability threshold
+  top_p: 0.9
+  
+  # Top-k sampling - consider only top k tokens
+  top_k: 50
+  
+  # Penalty for repeating tokens (1.0 = no penalty)
+  repetition_penalty: 1.1
+  
+  # Use sampling vs greedy decoding
+  do_sample: true
+
+security:
+  # Enable encryption for sensitive data
+  encrypt_data: true
+  
+  # Environment variable name for encryption key
+  encryption_key_env: "ENCRYPTION_KEY"
+  
+  # Use secure deletion (overwrite before deleting)
+  secure_delete: true
+
+fine_tuning:
+  # Directory to save fine-tuned models
+  output_dir: "./fine_tuned_models"
+  
+  # Training hyperparameters
+  num_epochs: 3
+  learning_rate: 2e-5
+  batch_size: 4
+  gradient_accumulation_steps: 4
+  warmup_steps: 100
+  logging_steps: 10
+  save_steps: 100
+  
+  # LoRA (Low-Rank Adaptation) settings for efficient fine-tuning
+  use_lora: true
+  lora_r: 8          # LoRA rank (lower = fewer parameters)
+  lora_alpha: 16     # LoRA scaling parameter
+  lora_dropout: 0.05 # Dropout for LoRA layers
+
+privacy:
+  # Only use local processing (no external API calls)
+  local_only: true
+  
+  # Disable telemetry and analytics
+  no_telemetry: true
+  
+  # Clear model cache when exiting
+  clear_cache_on_exit: false

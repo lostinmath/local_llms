@@ -1,0 +1,27 @@
+# Core LLM libraries
+transformers>=4.35.0
+torch>=2.0.0
+sentencepiece>=0.1.99
+accelerate>=0.24.0
+
+# Model optimization and quantization
+bitsandbytes>=0.41.0
+optimum>=1.14.0
+
+# Data processing and security
+cryptography>=41.0.0
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Fine-tuning
+peft>=0.6.0
+datasets>=2.14.0
+trl>=0.7.4
+
+# Configuration and utilities
+pyyaml>=6.0
+python-dotenv>=1.0.0
+tqdm>=4.66.0
+
+# Optional: For GGUF format support
+llama-cpp-python>=0.2.0;platform_machine=='x86_64' or platform_machine=='amd64'
