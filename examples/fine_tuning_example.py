@@ -1,7 +1,9 @@
-"""Fine-tuning example for Local LLMs."""
+"""Fine-tuning example for Local LLMs.
 
-import sys
-sys.path.insert(0, '../')
+To run this example:
+1. Install the package: pip install -e ..
+2. Run: python fine_tuning_example.py
+"""
 
 from local_llms import ModelManager, Config
 from local_llms.models.fine_tuning import FineTuner

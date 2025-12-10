@@ -1,7 +1,9 @@
-"""Basic usage example for Local LLMs."""
+"""Basic usage example for Local LLMs.
 
-import sys
-sys.path.insert(0, '../')
+To run this example:
+1. Install the package: pip install -e ..
+2. Run: python basic_usage.py
+"""
 
 from local_llms import ModelManager, InferenceEngine, Config
 

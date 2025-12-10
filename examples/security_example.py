@@ -1,7 +1,9 @@
-"""Security and privacy example for Local LLMs."""
+"""Security and privacy example for Local LLMs.
 
-import sys
-sys.path.insert(0, '../')
+To run this example:
+1. Install the package: pip install -e ..
+2. Run: python security_example.py
+"""
 
 import os
 from local_llms.utils.security import DataEncryption

@@ -55,11 +55,12 @@ setup(
             "mypy>=1.0.0",
         ],
     },
-    entry_points={
-        "console_scripts": [
-            "local-llms=local_llms.cli:main",
-        ],
-    },
+    # Note: CLI entry point can be added when CLI module is implemented
+    # entry_points={
+    #     "console_scripts": [
+    #         "local-llms=local_llms.cli:main",
+    #     ],
+    # },
     include_package_data=True,
     zip_safe=False,
 )

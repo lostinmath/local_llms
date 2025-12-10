@@ -48,7 +48,11 @@ class DataEncryption:
             Derived encryption key
         """
         if salt is None:
-            # Fixed salt for consistent key generation (warning: not secure for multi-user systems)
+            # WARNING: Fixed salt for consistent key generation from the same password.
+            # This is ONLY secure for single-user systems where the same password
+            # always generates the same key. For production multi-user systems,
+            # generate a random salt and store it securely alongside encrypted data.
+            # Example: salt = os.urandom(16)
             salt = b'local_llms_salt_v1'
         
         kdf = PBKDF2HMAC(
